@@ -632,9 +632,3 @@ class Juicer(object):
         """
         cart = juicer.common.Cart.Cart(cart_name=cartname)
         cart.implode(self._defaults['start_in'])
-
-    def edit_cart(self, cartname):
-        """
-        `cartname` - name of the cart to edit
-        """
-        cart = juicer.common.Cart.Cart(cart_name=cartname)
