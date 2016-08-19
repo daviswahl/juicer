@@ -131,3 +131,6 @@ def prune_repo(args):
 def delete(args):
     pulp = j(args)
     pulp.delete(cartname=args.cartname)
+
+def edit_cart(args):
+    juicer.common.Cart.Cart(args.cartname).edit()

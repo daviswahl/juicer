@@ -201,6 +201,16 @@ class Parser(object):
         parser_cart_delete.set_defaults(j=juicer.juicer.delete)
 
         ##################################################################
+        # Create the 'cart edit' sub-parser
+        parser_cart_edit = subparser_cart.add_parser('edit', \
+                help='Edit a cart with $EDITOR.',
+                usage='%(prog)s CARTNAME [-h]')
+
+        parser_cart_edit.add_argument('cartname', metavar='cartname', \
+                                    help='The name of the release cart to edit')
+        parser_cart_edit.set_defaults(j=juicer.juicer.edit_cart)
+
+        ##################################################################
         # Create the 'rpm search' sub-parser
         parser_rpm_search = subparser_rpm.add_parser('search',
                                                      help='Search for an RPM in pulp.',

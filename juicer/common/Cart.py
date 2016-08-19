@@ -283,3 +283,6 @@ class Cart(object):
         # db.carts.delete(self.name)
         juicer.utils.Log.log_debug("removing %s from the database" % self.cart_name)
         juicer.utils.cart_db()[env].remove({'_id': self.cart_name})
+
+    def edit(self):
+        os.system('%s %s' % (os.getenv('EDITOR'), self.cart_file()))
